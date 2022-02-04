@@ -1,3 +1,10 @@
-<h1>Edit Article</h1>
+<section>
+    <div class="heading flex">
+        <h1>Edit Article</h1>
+        <%= button_to "Back", article_path(@article), method: :get %>
+    </div>
 
-<%= render "form" %>
+    <div>
+    <%= render "form" %>
+    </div>
+</section>

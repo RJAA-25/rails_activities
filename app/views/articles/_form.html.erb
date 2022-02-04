@@ -1,34 +1,32 @@
-<%= form_with data: { turbo: false }, model: @article do |form| %>
+<%= form_with data: { turbo: false }, class: "form", model: @article do |form| %>
 
-    <div>
-        <%= form.label :title %><br/>
-        <%= form.text_field :title%>
-    </div>
-
-    <div>
-        <%= form.label :name %><br/>
-        <%= form.text_field :name%>
-    </div>
-
-    <div>
-        <%= form.label :body %><br/>
-        <%= form.text_area :body%>
-    </div>
-
-    <div>
-        <%= form.submit %>
-    </div>
-
-    <% if @article.errors.any? %>
-        <hr/>
+    <div class="info">
         <div>
+            <%= form.text_field :title, placeholder: "Title" %>
+        </div>
+
+        <div>
+            <%= form.text_field :name, placeholder: "Author" %>
+        </div>
+
+        <div>
+            <%= form.text_area :body, placeholder: "Content" %>
+        </div>
+
+        <div>
+            <%= form.submit%>
+        </div>
+    </div>
+
+    <div class="error">
+        <% if @article.errors.any? %>
             <h2>Errors</h2>
             <ul>
                 <% @article.errors.full_messages.each do |message| %>
                     <li><%= message %></li>
                 <% end %>
             </ul>
-        </div>
-    <% end %>
+        <% end %>
+    <div>
 
 <% end %>

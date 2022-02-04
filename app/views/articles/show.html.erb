@@ -1,5 +1,8 @@
-<%= render "article" %>
+<section>
+    <%= render "article" %>
 
-<div>
-
-</div>
+    <div class="flex">
+        <%= button_to "Edit", edit_article_path(@article), method: :get %>
+        <%= button_to "Delete", article_path(@article), method: :delete %>
+    </div>
+</section>
